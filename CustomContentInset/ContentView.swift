@@ -9,13 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List(0..<100) { i in
+            Text("Row \(i + 1)")
         }
-        .padding()
+        .safeAreaInset(edge: .bottom) {
+            Button {
+                
+            } label: {
+                Text("Add new Row")
+                    .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .padding()
+        }
     }
 }
 
